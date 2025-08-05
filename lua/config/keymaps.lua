@@ -3,7 +3,12 @@
 -- Add any additional keymaps here
 
 -- File explorer with Ctrl+e (Neotree cwd)
-vim.keymap.set("n", "<C-e>", "<cmd>Neotree toggle dir=./<cr>", { desc = " Toggle Explorer Neotree (cwd)" })
+vim.keymap.set(
+  "n",
+  "<C-e>",
+  "<cmd>Neotree toggle position=right dir=./<cr>",
+  { desc = " Toggle Explorer Neotree (cwd)" }
+)
 
 -- File search with Ctrl+p
 vim.keymap.set("n", "<C-p>", function()
