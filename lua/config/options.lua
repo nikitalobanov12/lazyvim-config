@@ -3,8 +3,10 @@
 -- Add any additional options here
 
 vim.opt.listchars = {
-	tab = "  ",
-	extends = "❯", -- Show when line extends beyond screen
-	precedes = "❮", -- Show when line precedes screen
-	nbsp = "␣",
+  tab = "  ",
+  extends = "❯", -- Show when line extends beyond screen
+  precedes = "❮", -- Show when line precedes screen
+  nbsp = "␣",
 }
+-- Disable inlay hints
+vim.lsp.inlay_hint.enable(false)
