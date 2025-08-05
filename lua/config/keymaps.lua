@@ -10,10 +10,10 @@ end, { desc = "Explorer Snacks (cwd)" })
 
 -- File search with Ctrl+p
 vim.keymap.set("n", "<C-p>", function()
-  require("fzf-lua").files()
-end, { desc = "Find Files (Root Dir)" })
+  require("fzf-lua").files({ cwd = "." })
+end, { desc = "Find Files (cwd)" })
 
 -- Grep/search with Ctrl+q
 vim.keymap.set("n", "<C-q>", function()
-  require("fzf-lua").live_grep()
-end, { desc = "Grep (Root Dir)" })
+  require("fzf-lua").live_grep({ cwd = "." })
+end, { desc = "Grep (cwd)" })
