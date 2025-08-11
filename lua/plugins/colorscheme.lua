@@ -63,9 +63,84 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
+      require("nordic").setup({
+        reduced_blue = false,
+        swap_backgrounds = false,
+        on_highlight = function(highlights, colors)
+          -- Much darker background
+          highlights.Normal = { bg = "#111111" }
+          highlights.NormalFloat = { bg = "#1e1e1e" }
+
+          -- Improve visual selection highlighting
+          highlights.Visual = { bg = "#4c566a", fg = "#eceff4" }
+          highlights.VisualNOS = { bg = "#4c566a", fg = "#eceff4" }
+
+          -- Better search highlighting
+          highlights.Search = { bg = "#ebcb8b", fg = "#2e3440" }
+          highlights.IncSearch = { bg = "#d08770", fg = "#2e3440" }
+
+          -- Darker sidebar and split backgrounds
+          highlights.NormalNC = { bg = "#1e1e1e" }
+          highlights.SignColumn = { bg = "#242424" }
+          highlights.LineNr = { bg = "#242424" }
+          highlights.CursorLineNr = { bg = "#242424" }
+
+          -- Darker statusline
+          highlights.StatusLine = { bg = "#1e1e1e" }
+          highlights.StatusLineNC = { bg = "#1a1a1a" }
+
+          -- Better cursor line
+          highlights.CursorLine = { bg = "#2a2a2a" }
+
+          -- Blue and white color scheme
+          -- Main syntax elements in different shades of blue
+          highlights.Function = { fg = "#c2e1ff" }
+          highlights.Keyword = { fg = "#88c0d0" }
+          highlights.Statement = { fg = "#88c0d0" }
+          highlights.Conditional = { fg = "#88c0d0" }
+          highlights.Repeat = { fg = "#88c0d0" }
+          highlights.Label = { fg = "#88c0d0" }
+          highlights.Operator = { fg = "#81a1c1" }
+          highlights.Exception = { fg = "#88c0d0" }
+          highlights.PreProc = { fg = "#5e81ac" }
+          highlights.Include = { fg = "#5e81ac" }
+          highlights.Define = { fg = "#5e81ac" }
+          highlights.Macro = { fg = "#5e81ac" }
+          highlights.PreCondit = { fg = "#5e81ac" }
+          highlights.Type = { fg = "#c2e1ff" }
+          highlights.StorageClass = { fg = "#81a1c1" }
+          highlights.Structure = { fg = "#c2e1ff" }
+          highlights.Typedef = { fg = "#c2e1ff" }
+
+          -- Override orange/yellow elements with blues and whites
+          highlights.String = { fg = "#eceff4" }
+          highlights.Character = { fg = "#eceff4" }
+          highlights.Number = { fg = "#d8dee9" }
+          highlights.Boolean = { fg = "#81a1c1" }
+          highlights.Float = { fg = "#d8dee9" }
+          highlights.Identifier = { fg = "#e5e9f0" }
+          highlights.Variable = { fg = "#e5e9f0" }
+          highlights.Constant = { fg = "#d8dee9" }
+          highlights.Special = { fg = "#88c0d0" }
+          highlights.SpecialChar = { fg = "#88c0d0" }
+          highlights.Tag = { fg = "#81a1c1" }
+          highlights.Delimiter = { fg = "#d8dee9" }
+          highlights.SpecialComment = { fg = "#616e88" }
+          highlights.Debug = { fg = "#88c0d0" }
+
+          -- Comments in muted blue-gray
+          highlights.Comment = { fg = "#616e88", italic = true }
+
+          -- Error and warning in subtle blues instead of reds
+          highlights.Error = { fg = "#81a1c1", bg = "#3b4252" }
+          highlights.ErrorMsg = { fg = "#81a1c1" }
+          highlights.WarningMsg = { fg = "#88c0d0" }
+        end,
+      })
       require("nordic").load()
     end,
   },
+
   {
     "LazyVim/LazyVim",
     opts = {

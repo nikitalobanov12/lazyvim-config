@@ -4,17 +4,17 @@
 
 -- File explorer with Ctrl+e (Snacks explorer)
 
-vim.keymap.set("n", "<C-e>", function()
+vim.keymap.set({ "n", "i" }, "<C-e>", function()
   Snacks.explorer({ cwd = vim.fn.getcwd() })
 end, { desc = "Explorer Snacks (cwd)" })
 
 -- File search with Ctrl+p
-vim.keymap.set("n", "<C-p>", function()
+vim.keymap.set({ "n", "i" }, "<C-p>", function()
   Snacks.picker.files({ cwd = vim.fn.getcwd() })
 end, { desc = "Find Files (cwd)" })
 
 -- Grep/search with Ctrl+q
-vim.keymap.set("n", "<C-q>", function()
+vim.keymap.set({ "i", "n" }, "<C-q>", function()
   Snacks.picker.grep({ cwd = vim.fn.getcwd() })
 end, { desc = "Live Grep (cwd)" })
 
