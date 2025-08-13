@@ -68,7 +68,7 @@ return {
         swap_backgrounds = false,
         on_highlight = function(highlights, colors)
           -- Much darker background
-          highlights.Normal = { bg = "#111111" }
+          highlights.Normal = { bg = "#242424" }
           highlights.NormalFloat = { bg = "#1e1e1e" }
 
           -- Improve visual selection highlighting
