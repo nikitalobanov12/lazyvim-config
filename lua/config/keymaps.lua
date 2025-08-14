@@ -30,3 +30,12 @@ vim.keymap.set("n", "<leader>ts", function()
   vim.fn.system("tmux new-session -d -s nvim-session 2>/dev/null")
   print("Created tmux session: nvim-session")
 end, { desc = "Create tmux session" })
+
+-- Toggle tmux terminal split (75/25 ratio)
+vim.keymap.set("n", "<C-/>", function()
+  if vim.env.TMUX then
+    vim.fn.system("tmux send-keys C-` 2>/dev/null")
+  else
+    print("Not in a tmux session")
+  end
+end, { desc = "Toggle tmux terminal split" })
