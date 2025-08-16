@@ -30,7 +30,6 @@ return {
   },
   {
     "rebelot/kanagawa.nvim",
-    priority = 1000,
     config = function()
       require("kanagawa").setup({
         compile = true,
@@ -60,8 +59,6 @@ return {
   },
   {
     "AlexvZyl/nordic.nvim",
-    lazy = false,
-    priority = 1000,
     config = function()
       require("nordic").setup({
         reduced_blue = false,
@@ -110,6 +107,7 @@ return {
           highlights.Type = { fg = "#c2e1ff" }
           highlights.StorageClass = { fg = "#81a1c1" }
           highlights.Structure = { fg = "#c2e1ff" }
+
           highlights.Typedef = { fg = "#c2e1ff" }
 
           -- Override orange/yellow elements with blues and whites
@@ -137,14 +135,50 @@ return {
           highlights.WarningMsg = { fg = "#88c0d0" }
         end,
       })
-      require("nordic").load()
     end,
   },
-
+  {
+    "loctvl842/monokai-pro.nvim",
+    config = function()
+      require("monokai-pro").setup({
+        transparent_background = false,
+        terminal_colors = true,
+        devicons = true,
+        styles = {
+          comment = { italic = true },
+          keyword = { italic = true },
+          type = { italic = true },
+          storageclass = { italic = true },
+          structure = { italic = true },
+          parameter = { italic = true },
+          annotation = { italic = true },
+          tag_attribute = { italic = true },
+        },
+        filter = "spectrum", -- classic | octagon | pro | machine | ristretto | spectrum
+        inc_search = "background",
+        background_clear = {
+          "toggleterm",
+          "telescope",
+          "renamer",
+          "notify",
+        },
+        plugins = {
+          bufferline = {
+            underline_selected = false,
+            underline_visible = false,
+          },
+          indent_blankline = {
+            context_highlight = "default",
+            context_start_underline = false,
+          },
+        },
+      })
+    end,
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "nordic",
+      colorscheme = "monokai-pro",
     },
   },
 }
