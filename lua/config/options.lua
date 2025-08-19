@@ -13,3 +13,6 @@ vim.opt.listchars = {
 }
 -- Disable inlay hints
 vim.lsp.inlay_hint.enable(false)
+
+-- Disable LazyVim dashboard to show default Neovim intro
+vim.g.lazyvim_dashboard = false
