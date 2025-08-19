@@ -6,7 +6,7 @@ return {
       completion = {
         accept = {
           auto_brackets = {
-            enabled = true,
+            enabled = false,
           },
         },
         menu = {
@@ -15,6 +15,9 @@ return {
         ghost_text = {
           enabled = false, -- Disable the inline preview text
         },
+      },
+      snippet = {
+        expand = function(snippet) end,
       },
     },
   },

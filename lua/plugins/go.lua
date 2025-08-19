@@ -50,7 +50,7 @@ return {
               -- Disable strict documentation requirements
               ["local"] = "off",
               completeUnimported = true,
-              usePlaceholders = true,
+              usePlaceholders = false,
               deepCompletion = true,
             },
           },
