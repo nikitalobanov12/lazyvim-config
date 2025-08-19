@@ -18,8 +18,9 @@ return {
             hidden = true,
           },
           explorer = {
-            ignored = true,  -- Show git ignored files by default
-            hidden = true,   -- Show hidden files by default
+            ignored = true, -- Show git ignored files by default
+            hidden = true, -- Show hidden files by default
+            layout = { preset = "right" }, -- Position explorer on the right side
           },
         },
       },
