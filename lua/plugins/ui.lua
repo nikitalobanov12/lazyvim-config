@@ -1,4 +1,6 @@
+-- UI related plugins
 return {
+  -- Colorschemes
   {
     "folke/tokyonight.nvim",
     lazy = true,
@@ -54,11 +56,19 @@ return {
       },
     },
   },
-
   {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "gruvbox",
+    },
+  },
+
+  -- Status line
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = {
+      options = { theme = "gruvbox" },
+      sections = { lualine_z = {} },
     },
   },
 }
