@@ -21,8 +21,8 @@ return {
           --   padding = 1,
           --   action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
           -- },
-          { icon = "󰒲", key = "l", desc = "Plugins", action = ":Lazy", padding = 1 },
-          { icon = "", key = "x", desc = "Extras", action = ":LazyExtras", padding = 1 },
+          -- { icon = "󰒲", key = "l", desc = "Plugins", action = ":Lazy", padding = 1 },
+          -- { icon = "", key = "x", desc = "Extras", action = ":LazyExtras", padding = 1 },
           {
             icon = "󰊤",
             desc = "Browse Repo",
@@ -40,7 +40,7 @@ return {
             title = "Git Status",
             section = "terminal",
             cmd = "git --no-pager diff --stat -B -M -C",
-            height = 10,
+            height = 5,
             padding = 1,
             enabled = function()
               return Snacks.git.get_root() ~= nil
