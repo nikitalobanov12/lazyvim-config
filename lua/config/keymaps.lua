@@ -8,10 +8,7 @@ vim.keymap.set({ "n", "i" }, "<C-e>", function()
   Snacks.explorer({ cwd = vim.fn.getcwd() })
 end, { desc = "Explorer Snacks (cwd)" })
 
--- File search with Ctrl+p
-vim.keymap.set({ "n", "i" }, "<C-p>", function()
-  Snacks.picker.files({ cwd = vim.fn.getcwd() })
-end, { desc = "Find Files (cwd)" })
+-- File search keymaps moved to fff.lua plugin configuration
 
 -- Grep/search with Ctrl+q
 vim.keymap.set({ "i", "n" }, "<C-q>", function()

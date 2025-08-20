@@ -8,19 +8,10 @@ return {
         enabled = true,
       },
       picker = {
-        enabled = true,
-        -- Configure sources to include hidden and ignored files by default
+        enabled = false, -- Disabled since using fff.nvim instead
         sources = {
-          files = {
-            hidden = true,
-          },
-          grep = {
-            hidden = true,
-          },
           explorer = {
-            ignored = true, -- Show git ignored files by default
-            hidden = true, -- Show hidden files by default
-            layout = { preset = "right" }, -- Position explorer on the right side
+            layout = { layout = { position = "right" } },
           },
         },
       },

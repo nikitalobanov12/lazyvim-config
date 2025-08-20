@@ -23,29 +23,29 @@ return {
           -- },
           -- { icon = "󰒲", key = "l", desc = "Plugins", action = ":Lazy", padding = 1 },
           -- { icon = "", key = "x", desc = "Extras", action = ":LazyExtras", padding = 1 },
-          {
-            icon = "󰊤",
-            desc = "Browse Repo",
-            key = "b",
-            padding = 1,
-            action = function()
-              Snacks.gitbrowse()
-            end,
-            enabled = function()
-              return Snacks.git.get_root() ~= nil
-            end,
-          },
-          {
-            icon = "󰊢",
-            title = "Git Status",
-            section = "terminal",
-            cmd = "git --no-pager diff --stat -B -M -C",
-            height = 5,
-            padding = 1,
-            enabled = function()
-              return Snacks.git.get_root() ~= nil
-            end,
-          },
+          -- {
+          --   icon = "󰊤",
+          --   desc = "Browse Repo",
+          --   key = "b",
+          --   padding = 1,
+          --   action = function()
+          --     Snacks.gitbrowse()
+          --   end,
+          --   enabled = function()
+          --     return Snacks.git.get_root() ~= nil
+          --   end,
+          -- },
+          -- {
+          --   icon = "󰊢",
+          --   title = "Git Status",
+          --   section = "terminal",
+          --   cmd = "git --no-pager diff --stat -B -M -C",
+          --   height = 5,
+          --   padding = 1,
+          --   enabled = function()
+          --     return Snacks.git.get_root() ~= nil
+          --   end,
+          -- },
         },
       },
     },
