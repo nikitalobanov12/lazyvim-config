@@ -1,7 +1,7 @@
 -- Completion and LSP
 return {
   {
-    "saghen/blink.cmp", 
+    "saghen/blink.cmp",
     opts = {
       completion = {
         accept = {
@@ -22,3 +22,4 @@ return {
     },
   },
 }
+

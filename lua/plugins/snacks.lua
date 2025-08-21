@@ -4,16 +4,9 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
-      explorer = { enabled = true },
+      explorer = { enabled = false },
       picker = { 
         enabled = false,
-        sources = {
-          explorer = {
-            layout = { layout = { position = "right" } },
-            hidden = true,
-            ignored = true,
-          },
-        },
       },
       indent = { enabled = false },
       dashboard = {

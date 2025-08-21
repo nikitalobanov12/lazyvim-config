@@ -1,7 +1,6 @@
 -- Navigation & File Management
-vim.keymap.set({ "n", "i" }, "<C-e>", function()
-  Snacks.explorer({ cwd = vim.fn.getcwd() })
-end, { desc = "Explorer Snacks (cwd)" })
+vim.keymap.set({ "n", "i" }, "<C-e>", "<CMD>Oil<CR>", { desc = "Open Oil file explorer" })
+vim.keymap.set("n", "ee", "<CMD>Oil<CR>", { desc = "Open Oil file explorer" })
 
 vim.keymap.set({ "i", "n" }, "<C-q>", function()
   Snacks.picker.grep({ cwd = vim.fn.getcwd() })
