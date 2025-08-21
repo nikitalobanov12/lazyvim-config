@@ -6,22 +6,31 @@ return {
     build = "cargo build --release",
     lazy = true,
     cmd = { "FFFFind", "FFFScan", "FFFRefreshGit" },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
       base_path = vim.fn.getcwd(),
-      prompt = "",
-      title = "Find",
-      max_results = 100,
+      prompt = "> ",
+      title = "",
+      max_results = 150,
       layout = {
-        height = 0.8,
-        width = 0.8,
+        height = 0.85,
+        width = 0.85,
         prompt_position = "bottom",
         preview_position = "right",
-        preview_size = 0.5,
+        preview_size = 0.6,
       },
       preview = {
         enabled = true,
+        max_size = 10 * 1024 * 1024,
+        chunk_size = 8192,
+        binary_file_threshold = 1024,
         line_numbers = false,
         wrap_lines = false,
+        show_file_info = true,
+        filetypes = {
+          markdown = { wrap_lines = true },
+          text = { wrap_lines = true },
+        },
       },
       keymaps = {
         close = "<Esc>",
@@ -31,8 +40,23 @@ return {
         select_tab = "<C-t>",
         move_up = { "<Up>", "<C-p>" },
         move_down = { "<Down>", "<C-n>" },
+        preview_scroll_up = "<C-u>",
+        preview_scroll_down = "<C-d>",
+        toggle_debug = "<F2>", -- Shows file scores and additional info
       },
-      frecency = { enabled = true },
+      frecency = {
+        enabled = true,
+        db_path = vim.fn.stdpath("cache") .. "/fff_nvim",
+      },
+      debug = {
+        enabled = false,
+        show_scores = true, -- Shows frecency scores and git status
+      },
+      logging = {
+        enabled = true,
+        log_file = vim.fn.stdpath("log") .. "/fff.log",
+        log_level = "info",
+      },
     },
     keys = {
       {
@@ -140,4 +164,3 @@ return {
     },
   },
 }
-
