@@ -11,3 +11,22 @@ vim.opt.listchars = {
 
 -- LSP Settings
 vim.lsp.inlay_hint.enable(false)
+
+-- Line ending settings to prevent ^M characters
+vim.opt.fileformats = { "unix", "dos" }
+vim.opt.fileformat = "unix"
+
+-- Clipboard integration with Windows
+vim.opt.clipboard = "unnamedplus"
+vim.g.clipboard = {
+  name = "win32yank-wsl",
+  copy = {
+    ["+"] = "win32yank.exe -i --crlf",
+    ["*"] = "win32yank.exe -i --crlf",
+  },
+  paste = {
+    ["+"] = "win32yank.exe -o --lf",
+    ["*"] = "win32yank.exe -o --lf",
+  },
+  cache_enabled = 0,
+}
